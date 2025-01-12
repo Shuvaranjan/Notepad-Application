@@ -92,12 +92,12 @@ public class Gui implements ActionListener {
 
     }
 
-    // define thetextArea Method which help us to write our text
+    // define the textArea Method which help us to write our text
     public void createtextArea() {
         textArea = new JTextArea();
-        textArea.setBackground(new Color(31,31,31));
-        textArea.setBorder(BorderFactory.createMatteBorder(10, 10, 25, 10, new Color(31,31,31)));
-        textArea.setForeground(Color.white);
+        textArea.setBackground(Color.WHITE);
+        textArea.setBorder(BorderFactory.createMatteBorder(10, 10, 25, 10, Color.WHITE));
+        textArea.setForeground(Color.black);
         textArea.addKeyListener(keyhandler);
         // undo, redo manager apply
         textArea.getDocument().addUndoableEditListener(new UndoableEditListener() {
@@ -125,26 +125,31 @@ public class Gui implements ActionListener {
         // File
         menuFile = new JMenu("File");
         menuFile.setForeground(Color.WHITE);
+        menuFile.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuFile);
 
         // Edit
         menuEdit = new JMenu("Edit");
         menuEdit.setForeground(Color.WHITE);
+        menuEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuEdit);
 
         // Format
         menuFormat = new JMenu("Format");
         menuFormat.setForeground(Color.WHITE);
+        menuFormat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuFormat);
 
         // Color
         menuColor = new JMenu("Color");
         menuColor.setForeground(Color.WHITE);
+        menuColor.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuColor);
 
         // About
         menuAbout = new JMenu("About");
         menuAbout.setForeground(Color.WHITE);
+        menuAbout.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuAbout);
 
     }

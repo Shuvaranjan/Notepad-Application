@@ -20,7 +20,7 @@ import javax.swing.ViewportLayout;
 /*
  * Author- Shuvaranjan Sarkar
  */
-public class FunctionAbout {
+public class FunctionAbout extends JDialog{
     Gui gui;
 
     public FunctionAbout(Gui gui) {
@@ -28,35 +28,39 @@ public class FunctionAbout {
     }
 
     public void About() {
-        JDialog frame = new JDialog();
-        frame.setTitle("About Notepad");
-        frame.setBounds(400, 100, 600, 500);
-        frame.setVisible(true);
-        frame.setLayout(null);
-        frame.setLocationRelativeTo(null);
+        // JDialog frame = new JDialog();
+        setTitle("About Notepad");
+        setBounds(400, 100, 600, 500);
+        setVisible(true);
+        setResizable(false);
+        setLayout(null);
+        setLocationRelativeTo(null);
+        setModal(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
    
         ImageIcon icon = new ImageIcon(getClass().getResource("Images/icons8-note-50.png"));
-        frame.setIconImage(icon.getImage());
+        setIconImage(icon.getImage());
         ImageIcon img = new ImageIcon(getClass().getResource("Images/icons8-windows-11-144.png"));
         JLabel setimg = new JLabel(img);
         setimg.setBounds(0, 0, 600, 100);
-        frame.add(setimg);
+        add(setimg);
 
         JLabel lbvl1 = new JLabel("Windows 11");
         lbvl1.setBounds(260, 80, 120, 50);
         lbvl1.setFont(new Font("Arial", Font.BOLD, 16));
-        frame.add(lbvl1);
+        add(lbvl1);
 
         JLabel headerLinLabel = new JLabel(
                 "________________________________________________________________________________________________________________");
         headerLinLabel.setBounds(30, 120, 520, 20);
-        frame.add(headerLinLabel);
+        add(headerLinLabel);
 
         ImageIcon icon2 = new ImageIcon("Application/src/Images/icons8-notepad-50.png");
         JLabel notepad = new JLabel(icon2);
         notepad.setBounds(0, 120, 100, 100);
         notepad.setForeground(Color.BLACK);
-        frame.add(notepad);
+        add(notepad);
 
         JLabel lbvl2 = new JLabel(/*
                                    * "<html><body>Microsoft Windows<br>Version 22H2 (OS Build)<br>© Microsoft Corporation, All rights reserved.<br><br>The Windows 11 Home Single Language operating system and it's user interface are used by Core Java.<br><br>This product is licensed under the</body></html>"
@@ -77,7 +81,7 @@ public class FunctionAbout {
 
         lbvl2.setBounds(80, 90, 520, 350);
         lbvl2.setFont(new Font("Calibri", Font.PLAIN, 18));
-        frame.add(lbvl2);
+        add(lbvl2);
 
         JButton button = new JButton("OK");
         button.setBounds(480, 420, 80, 25);
@@ -104,12 +108,12 @@ public class FunctionAbout {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
+                FunctionAbout.this.dispose();
 
             }
 
         });
-        frame.add(button);
+        add(button);
 
     }
 
